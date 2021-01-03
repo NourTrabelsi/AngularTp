@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<section class="jumbotron text-center" style="background-color: hsl(0deg 0% 50% / 75%);">
+    <div class="container">
+      <h1>{{data.name}}</h1>
+    </div>
+  </section>
+
+
+  <div class="col-md-5" style=" display: block;
+margin-left: auto;
+margin-right: auto ">
+    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{{data.image}}" role="img" aria-label="Placeholder: 500x500">
+  </div>
+<div class="container marketing" >
+    <div class="row featurette">
+      <div class="col-md-7" style="margin-left: auto;
+      margin-right: auto;
+      width: 1em">
+        <h2 class="featurette-heading">{{data.description}}</h2>
+        <span class="text-muted"> Frais d'inscription : {{data.prix}} DT</span>
+        <h3>{{data.localisation}}</h3>
+        <a href="{{data.url}}">Voir le lien </a>
+        <p class="lead"></p>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<app-footer></app-footer>

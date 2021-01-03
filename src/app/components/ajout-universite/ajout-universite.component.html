@@ -1,0 +1,102 @@
+
+ <!-- Sidenav -->
+ <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <app-side-bar></app-side-bar>
+  </nav>
+
+<!-- Main content -->
+<div class="main-content" id="panel">
+    <app-top-bar></app-top-bar>
+
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+      <div class="container">
+        <div class="header-body text-center">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 px-5 mb-4">
+              <h1 class="text-white">Ajouter universités</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+
+
+
+    <div class="container mt--8 pb-5">
+        <!-- Table -->
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <div class="card bg-secondary border-0">
+              
+                <div class="card-body px-lg-5 py-lg-5">
+                    
+                        <form [formGroup]="addInstitutForm" (ngSubmit)="addInstitut()">
+                            <div>
+                                 <label for="exampleFormControlInput1">Nom de l'universités</label>
+                                 <input formControlName="name"  type="text" class="form-control"  >
+                                 <small
+                                 *ngIf="addInstitutForm.get('name')?.touched && addInstitutForm.get('name')?.invalid"
+                                 class="text-danger">name is required</small>
+                            </div>
+                            <div>
+                                <label for="exampleFormControlInput1">URL</label>
+                                <input formControlName="url"  type="text" class="form-control"  >
+                                <small
+                                *ngIf="addInstitutForm.get('url')?.touched && addInstitutForm.get('url')?.invalid"
+                                class="text-danger">URl is required</small>
+
+                            </div>
+
+                            <div>
+                                <label for="exampleFormControlInput1">Image</label><br>
+                                <input formControlName="image" class="form-control"   type="text" name="mon_fichier">
+                                <small
+                                 *ngIf="addInstitutForm.get('image')?.touched && addInstitutForm.get('image')?.invalid"
+                                 class="text-danger">image is required</small>
+                            </div>
+
+
+                            <div>
+                            <label for="exampleFormControlTextarea1">Déscription</label>
+                            <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <small
+                            *ngIf="addInstitutForm.get('description')?.touched && addInstitutForm.get('description')?.invalid"
+                            class="text-danger">description is required</small>
+                          </div>
+
+                          <div>
+                            <label for="exampleFormControlTextarea1">Localisation</label>
+                            <input formControlName="localisation" class="form-control" id="exampleFormControlTextarea1" rows="3">
+                            <small
+                            *ngIf="addInstitutForm.get('localisation')?.touched && addInstitutForm.get('localisation')?.invalid"
+                            class="text-danger">Localisation is required</small>
+                          </div>
+                        
+                          <div>
+                            <label for="exampleFormControlTextarea1">Coût</label>
+                            <input formControlName="prix" class="form-control" id="exampleFormControlTextarea1" rows="3">
+                            <small
+                            *ngIf="addInstitutForm.get('prix')?.touched && addInstitutForm.get('prix')?.invalid"
+                            class="text-danger">cout is required</small>
+                          </div>
+                        
+
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Ajouter</button>
+                            </div>
+                        </form>
+
+
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

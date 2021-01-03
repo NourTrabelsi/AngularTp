@@ -1,0 +1,80 @@
+
+ <!-- Sidenav -->
+ <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <app-side-bar></app-side-bar>
+  </nav>
+
+<!-- Main content -->
+<div class="main-content" id="panel">
+    <app-top-bar></app-top-bar>
+
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+      <div class="container">
+        <div class="header-body text-center">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 px-5 mb-4">
+              <h1 class="text-white">Modifier universités</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+
+
+
+    <div class="container mt--8 pb-5">
+        <!-- Table -->
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <div class="card bg-secondary border-0">
+              
+                <div class="card-body px-lg-5 py-lg-5">
+                    
+                        <form [formGroup]="universityForm" (ngSubmit)="UpdateUniversity()">
+                            <div>
+                            <label for="exampleFormControlInput1">Nom de l'universités</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="name"  [ngModel]="data.name" >
+                            </div>
+                            <div>
+                                <label for="exampleFormControlInput1">URL</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="url" formControlName="url" [ngModel]="data.url">
+                            </div>
+
+                            <div>
+                                <label for="exampleFormControlInput1">Image</label><br>
+                                <input type="text" name="mon_fichier"  formControlName="image" class="form-control"   [ngModel]="data.image">
+                            </div>
+                            <div>
+                            <label for="exampleFormControlTextarea1">Déscription</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description" [ngModel]="data.description" ></textarea>
+                            </div>
+
+                            <div>
+                              <label for="exampleFormControlInput1">Localisation</label><br>
+                              <input type="text" name="mon_fichier" class="form-control"   formControlName="localisation" [ngModel]="data.localisation">
+                          </div>
+                          <div>
+                            <label for="exampleFormControlInput1">Coût</label><br>
+                            <input type="text" name="mon_fichier"  class="form-control"   formControlName="prix" [ngModel]="data.prix">
+                        </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Modifier</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <app-footer></app-footer>
+
+</div>

@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "institueApp"
+  "defaultProject": "institueApp",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,72 @@
+<!-- Main content -->
+<div class="main-content">
+  <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+        <div class="container">
+          <div class="header-body text-center mb-2">
+            <div class="row justify-content-center">
+              <div class="col-xl-5 col-lg-6 col-md-8 px-5 mb-4">
+                <h1 class="text-white">Bienvenue!</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Page content -->
+      <div class="container mt--8 pb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-7">
+            <div class="card bg-secondary border-0 mb-0">
+              <div class="card-header bg-transparent pb-5">
+              <div class="card-body px-lg-5 py-lg-5">
+
+                <div class="card-header bg-transparent pb-5">
+                  <div class="btn-wrapper text-center">
+                    <a routerLink="/register" class="btn btn-neutral btn-icon">
+                      <span class="btn-inner--icon"></span>
+                      <span class="btn-inner--text">Se connecter</span>
+                    </a>
+                    
+                  </div>
+                </div>
+
+
+                <form [formGroup]="loginForm" (ngSubmit)="loginUser()" role="form">
+                  <div class="form-group mb-3">
+                    <label>Saisir votre email :</label>
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      </div>
+                      <input formControlName="email" class="form-control" placeholder="Email" type="email">
+                      <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+                        class="text-danger">email is required</small>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Saisir votre mot de passe :</label>
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input formControlName="password" class="form-control" placeholder="Password" type="password">
+                      <small
+                      *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+                      class="text-danger">password is required</small>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary my-4" [disabled]="loginForm.invalid">Se connecter</button>
+                  </div>
+                </form>
+
+                <hr>
+                <div class="text-center">
+                    <a class="small" routerLink="/register">Create an Account!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
